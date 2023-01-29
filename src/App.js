@@ -41,13 +41,38 @@ function SayHello(){
       }}>Hello <br /> {name.toLocaleUpperCase()}</h1>
       <p>Hey</p>
       {error ? <div>error</div> : <div>success</div>}
-
       {test && <div>{test}</div>}
-
       <h2>{error ? "success" : "false"}</h2>
+
+
+      <SayName name= "John"/>
+      <SayName name= "Jim" />
+      <SayName />
+
+      <Comment username="Conner" time={new Date().toString()} >
+        <h1>Hello world</h1>
+        <p>this is a Comment</p>
+      </Comment>
     </>
   )
 }
+
+function Comment({username, time, children}) {
+  return (
+    <section>
+      <p>{username} comment at {time}</p>
+      {children}
+    </section>
+  )
+}
+
+
+function SayName({name = 'Test'}) {
+  return (
+    <h1>Hello {name ? name : ''}</h1>
+  )
+}
+
 
 
 function Form() {
