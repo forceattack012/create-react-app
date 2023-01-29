@@ -53,7 +53,23 @@ function SayHello(){
         <h1>Hello world</h1>
         <p>this is a Comment</p>
       </Comment>
+
+      <MyButton onClick={handleClick}>Click me</MyButton>
     </>
+  )
+}
+
+function handleClick(event) {
+  console.log(event.nativeEvent)
+}
+
+function MyButton(props) {
+  return (
+    <button 
+      // onClick={props.onClick}
+      {...props}
+      style={{color: 'red'}}
+    >Cilck me</button>
   )
 }
 
