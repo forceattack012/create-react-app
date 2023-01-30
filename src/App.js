@@ -2,6 +2,7 @@ import React from 'react';
 
 import logo from './logo.svg';
 import './App.css';
+import ExampleState from './ExampleState/Example';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function SayHello(){
       </Comment>
 
       <MyButton onClick={handleClick}>Click me</MyButton>
+      <ExampleState />
     </>
   )
 }
