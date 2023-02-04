@@ -3,27 +3,38 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ExampleState from './ExampleState/Example';
+import MyComponent from './ExampleComponentLife/myComponent';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <SayHello />
-      <Form />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <SayHello />
+        <Form />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/my_component" element={<MyComponent />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
@@ -108,5 +119,4 @@ function Form() {
     </>
   )
 }
-
 export default App;
